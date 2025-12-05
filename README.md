@@ -6,6 +6,7 @@ Pathfinder Labyrinth adalah sebuah permainan puzzle berbasis terminal yang mengg
 Dalam permainan ini, setiap gerakan pemain memiliki konsekuensi. Pemain hanya dapat mendorong blok, bukan menariknya, sehingga perencanaan langkah demi langkah menjadi sangat penting. Tantangan utama terletak pada bagaimana pemain memanfaatkan ruang sempit labirin, menghindari posisi buntu, dan menempatkan blok secara tepat agar pintu keluar dapat terbuka.
 
 Pathfinder Labyrinth dikembangkan menggunakan bahasa pemrograman C++ dengan dukungan library ncurses, sehingga permainan berjalan dalam lingkungan terminal/console namun tetap menghadirkan pengalaman visual yang dinamis. Tampilan antarmuka dirancang sederhana namun intuitif, memungkinkan pemain fokus pada strategi tanpa distraksi visual yang berlebihan.
+
 ---
 ##🎮 Fitur Utama
 Labirin 2D bergaya retro tapi jelas dibaca.
