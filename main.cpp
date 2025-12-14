@@ -125,3 +125,37 @@ int main() {
             printw("%s\n", baris.c_str());
 
         printw("\nW A S D = bergerak | U = undo | Q = keluar\n");
+
+        int input = getch();
+
+        // ===============================
+        // KELUAR GAME
+        // ===============================
+        if (input == 'q' || input == 'Q') break;
+
+        // ===============================
+        // UNDO GERAKAN
+        // ===============================
+        if (input == 'u' || input == 'U') {
+            if (!riwayat.empty()) {
+                StatusGame sebelumnya = riwayat.back();
+                riwayat.pop_back();
+                pemain = sebelumnya.pemain;
+                kotak = sebelumnya.kotak;
+            }
+            continue;
+        }
+
+        // ===============================
+        // INPUT ARAH GERAK
+        // ===============================
+        int dr = 0, dc = 0;
+        if (input == 'w') dr = -1;
+        if (input == 's') dr = 1;
+        if (input == 'a') dc = -1;
+        if (input == 'd') dc = 1;
+
+        if (dr == 0 && dc == 0) continue;
+
+        int nr = pemain.r + dr;
+        int nc = pemain.c + dc;
