@@ -80,3 +80,11 @@ vector<string> updateMap(
     return m;
 }
 
+// ===============================
+// STRUKTUR GAME STATE
+// Digunakan untuk fitur UNDO
+// ===============================
+struct GameState {
+    Pos player;
+    map<string, Pos> boxes;
+};
