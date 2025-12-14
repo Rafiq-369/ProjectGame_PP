@@ -63,3 +63,14 @@ vector<string> updateMap(
     map<string, Pos>& boxes
 ) {
     vector<string> m = original;
+
+
+ // Bersihkan posisi lama player & box
+    for (int r = 0; r < m.size(); r++)
+        for (int c = 0; c < m[r].size(); c++)
+            if (m[r][c] == 'P' || m[r][c] == 'A' || m[r][c] == 'B')
+                m[r][c] = ' ';
+
+    // Gambar ulang box
+    for (auto& b : boxes)
+        m[b.second.r][b.second.c] = b.first[0];
