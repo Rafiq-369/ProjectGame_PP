@@ -86,3 +86,12 @@ struct StatusGame {
     Posisi pemain;
     map<string, Posisi> kotak;
 };
+int main() {
+
+    // ===============================
+    // INISIALISASI NCURSES
+    // ===============================
+    initscr();
+    noecho();
+    keypad(stdscr, TRUE);
+    curs_set(0);
