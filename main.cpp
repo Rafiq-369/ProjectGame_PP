@@ -109,3 +109,19 @@ int main() {
             if (petaDasar[r][c] == 'B') kotak["B"] = {r, c};
         }
     }
+    // ===============================
+    // RIWAYAT GERAKAN (UNDO)
+    // ===============================
+    vector<StatusGame> riwayat;
+
+    // ===============================
+    // GAME LOOP UTAMA
+    // ===============================
+    while (true) {
+        clear();
+
+        auto petaTampil = perbaruiPeta(petaDasar, pemain, kotak);
+        for (auto& baris : petaTampil)
+            printw("%s\n", baris.c_str());
+
+        printw("\nW A S D = bergerak | U = undo | Q = keluar\n");
