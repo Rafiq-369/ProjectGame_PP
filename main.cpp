@@ -78,4 +78,11 @@ vector<string> perbaruiPeta(
     return peta;
 }
 
-
+// ===============================
+// STATUS GAME
+// Digunakan untuk fitur UNDO
+// ===============================
+struct StatusGame {
+    Posisi pemain;
+    map<string, Posisi> kotak;
+};
