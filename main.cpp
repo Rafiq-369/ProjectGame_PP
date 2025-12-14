@@ -72,3 +72,10 @@ vector<string> perbaruiPeta(
     // Gambar ulang kotak
     for (auto& k : kotak)
         peta[k.second.r][k.second.c] = k.first[0];
+
+// Gambar ulang pemain
+    peta[pemain.r][pemain.c] = 'P';
+    return peta;
+}
+
+
