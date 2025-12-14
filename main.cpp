@@ -42,3 +42,13 @@ bool isWall(const vector<string>& m, int r, int c) {
     return m[r][c] == '#';
 }
 
+// ===============================
+// HELPER: CEK APAKAH ADA BOX DI POSISI (r,c)
+// Mengembalikan nama box ("A"/"B") atau "" jika kosong
+// ===============================
+string findBoxAt(map<string, Pos>& boxes, int r, int c) {
+    for (auto& b : boxes)
+        if (b.second.r == r && b.second.c == c)
+            return b.first;
+    return "";
+}
