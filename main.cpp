@@ -159,3 +159,39 @@ int main() {
 
         int nr = pemain.r + dr;
         int nc = pemain.c + dc;
+
+        // Cek tembok
+        if (tembok(petaDasar, nr, nc)) continue;
+
+        string namaKotak = cariKotak(kotak, nr, nc);
+
+        // Simpan state sebelum bergerak
+        riwayat.push_back({pemain, kotak});
+
+        // ===============================
+        // JIKA MENABRAK KOTAK
+        // ===============================
+        if (namaKotak != "") {
+
+            bool A_terkunci = (petaDasar[kotak["A"].r][kotak["A"].c] == 'X');
+            bool B_terkunci = (petaDasar[kotak["B"].r][kotak["B"].c] == 'Y');
+
+            if (namaKotak == "A" && A_terkunci) { riwayat.pop_back(); continue; }
+            if (namaKotak == "B" && B_terkunci) { riwayat.pop_back(); continue; }
+
+            int br = kotak[namaKotak].r + dr;
+            int bc = kotak[namaKotak].c + dc;
+
+            if (tembok(petaDasar, br, bc)) { riwayat.pop_back(); continue; }
+            if (cariKotak(kotak, br, bc) != "") { riwayat.pop_back(); continue; }
+
+            char tujuan = petaDasar[br][bc];
+            if (namaKotak == "A" && tujuan == 'Y') { riwayat.pop_back(); continue; }
+            if (namaKotak == "B" && tujuan == 'X') { riwayat.pop_back(); continue; }
+
+            kotak[namaKotak] = {br, bc};
+            pemain = {nr, nc};
+        }
+        else {
+            pemain = {nr, nc};
+        }
