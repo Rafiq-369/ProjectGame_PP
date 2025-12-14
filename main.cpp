@@ -52,3 +52,14 @@ string findBoxAt(map<string, Pos>& boxes, int r, int c) {
             return b.first;
     return "";
 }
+
+// ===============================
+// UPDATE MAP UNTUK DITAMPILKAN
+// (Menggabungkan map dasar + posisi player & box)
+// ===============================
+vector<string> updateMap(
+    const vector<string>& original,
+    Pos player,
+    map<string, Pos>& boxes
+) {
+    vector<string> m = original;
