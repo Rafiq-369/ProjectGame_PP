@@ -95,3 +95,17 @@ int main() {
     noecho();
     keypad(stdscr, TRUE);
     curs_set(0);
+
+    Posisi pemain;
+    map<string, Posisi> kotak;
+
+    // ===============================
+    // DETEKSI POSISI AWAL PEMAIN & KOTAK
+    // ===============================
+    for (int r = 0; r < petaDasar.size(); r++) {
+        for (int c = 0; c < petaDasar[r].size(); c++) {
+            if (petaDasar[r][c] == 'P') pemain = {r, c};
+            if (petaDasar[r][c] == 'A') kotak["A"] = {r, c};
+            if (petaDasar[r][c] == 'B') kotak["B"] = {r, c};
+        }
+    }
