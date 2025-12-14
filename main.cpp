@@ -74,3 +74,9 @@ vector<string> updateMap(
     // Gambar ulang box
     for (auto& b : boxes)
         m[b.second.r][b.second.c] = b.first[0];
+
+ // Gambar ulang player
+    m[player.r][player.c] = 'P';
+    return m;
+}
+
