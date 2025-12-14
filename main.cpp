@@ -51,3 +51,24 @@ string cariKotak(map<string, Posisi>& kotak, int r, int c) {
             return k.first;
     return "";
 }
+
+// ===============================
+// MEMPERBARUI PETA UNTUK DITAMPILKAN
+// (menggabungkan peta dasar + pemain + kotak)
+// ===============================
+vector<string> perbaruiPeta(
+    const vector<string>& petaAsli,
+    Posisi pemain,
+    map<string, Posisi>& kotak
+) {
+    vector<string> peta = petaAsli;
+
+// Hapus posisi lama pemain dan kotak
+    for (int r = 0; r < peta.size(); r++)
+        for (int c = 0; c < peta[r].size(); c++)
+            if (peta[r][c] == 'P' || peta[r][c] == 'A' || peta[r][c] == 'B')
+                peta[r][c] = ' ';
+
+    // Gambar ulang kotak
+    for (auto& k : kotak)
+        peta[k.second.r][k.second.c] = k.first[0];
