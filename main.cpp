@@ -214,3 +214,6 @@ int main() {
             break;
         }
     }
+    endwin();
+    return 0;
+}
