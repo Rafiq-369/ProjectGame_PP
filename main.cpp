@@ -30,3 +30,24 @@ vector<string> petaDasar = {
 struct Posisi {
     int r, c;
 };
+
+// ===============================
+// HELPER: CEK APAKAH POSISI TEMBOK
+// ===============================
+bool tembok(const vector<string>& peta, int r, int c) {
+    // Di luar peta dianggap tembok
+    if (r < 0 || r >= (int)peta.size()) return true;
+    if (c < 0 || c >= (int)peta[0].size()) return true;
+    return peta[r][c] == '#';
+}
+
+// ===============================
+// HELPER: CARI KOTAK DI POSISI (r,c)
+// Mengembalikan "A", "B", atau "" jika kosong
+// ===============================
+string cariKotak(map<string, Posisi>& kotak, int r, int c) {
+    for (auto& k : kotak)
+        if (k.second.r == r && k.second.c == c)
+            return k.first;
+    return "";
+}
