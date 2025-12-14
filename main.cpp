@@ -195,3 +195,22 @@ int main() {
         else {
             pemain = {nr, nc};
         }
+
+        // ===============================
+        // CEK KONDISI MENANG
+        // ===============================
+        bool A_benar = (petaDasar[kotak["A"].r][kotak["A"].c] == 'X');
+        bool B_benar = (petaDasar[kotak["B"].r][kotak["B"].c] == 'Y');
+
+        if (A_benar && B_benar) {
+            clear();
+            auto petaMenang = perbaruiPeta(petaDasar, pemain, kotak);
+            for (auto& baris : petaMenang)
+                printw("%s\n", baris.c_str());
+
+            printw("\nSELAMAT! Semua kotak sudah di tujuan yang benar!\n");
+            printw("Tekan tombol apa saja untuk keluar...\n");
+            getch();
+            break;
+        }
+    }
